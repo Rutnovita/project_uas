@@ -1,0 +1,28 @@
+@echo off
+setlocal
+
+set DIR=%~dp0
+set APP_BASE_NAME=%~n0
+set APP_HOME=%DIR%
+
+set DEFAULT_JVM_OPTS=
+
+set CLASSPATH=%APP_HOME%\gradle\wrapper\gradle-wrapper.jar
+
+:findJavaFromJavaHome
+if defined JAVA_HOME goto findJavaFromJavaHome
+
+echo ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
+exit /b 1
+
+:findJavaFromJavaHome
+set JAVA_EXE=%JAVA_HOME%\bin\java.exe
+
+if exist "%JAVA_EXE%" goto init
+
+echo ERROR: JAVA_HOME is set to an invalid directory: %JAVA_HOME%
+exit /b 1
+
+:init
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% -classpath "%CLASSPATH%" org.gradle.wrapper.GradleWrapperMain %*
+endlocal

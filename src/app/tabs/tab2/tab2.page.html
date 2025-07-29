@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar class="custom-toolbar">
+    <ion-title class="custom-title">
+      <ion-icon name="create-outline" slot="start"></ion-icon>
+      Formulir Pendaftaran Lomba
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding fade-in">
+  <ion-card class="form-card animate-card">
+    <ion-card-header>
+      <ion-card-title class="judul-form">📝 Isi Data Pendaftaran</ion-card-title>
+      <ion-card-subtitle class="subjudul-form">Mohon isi semua data dengan benar</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <form (ngSubmit)="submitForm()" class="form-input-wrapper">
+
+        <ion-item class="form-item">
+          <ion-label position="floating">Nama Peserta</ion-label>
+          <ion-input type="text" [(ngModel)]="formData.nama_peserta" name="nama_peserta" required></ion-input>
+        </ion-item>
+
+        <ion-item class="form-item">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" [(ngModel)]="formData.email" name="email" required></ion-input>
+        </ion-item>
+
+        <ion-item class="form-item">
+          <ion-label position="floating">No. Telepon</ion-label>
+          <ion-input type="tel" [(ngModel)]="formData.telepon" name="telepon" required></ion-input>
+        </ion-item>
+
+        <ion-item class="form-item">
+          <ion-label position="floating">Alamat</ion-label>
+          <ion-input type="text" [(ngModel)]="formData.alamat" name="alamat" required></ion-input>
+        </ion-item>
+
+        <ion-item class="form-item">
+          <ion-label position="floating">Tempat Lahir</ion-label>
+          <ion-input type="text" [(ngModel)]="formData.tempat_lahir" name="tempat_lahir" required></ion-input>
+        </ion-item>
+
+        <ion-item class="form-item">
+          <ion-label position="stacked">Tanggal Lahir</ion-label>
+          <ion-datetime
+            presentation="date"
+            [(ngModel)]="formData.tanggal_lahir"
+            name="tanggal_lahir"
+            required>
+          </ion-datetime>
+        </ion-item>
+
+        <ion-item class="form-item">
+          <ion-label position="stacked">Kategori Usia</ion-label>
+          <ion-select [(ngModel)]="formData.kategori_usia" name="kategori_usia" placeholder="Pilih Kategori Usia" required>
+            <ion-select-option value="Anak">Anak</ion-select-option>
+            <ion-select-option value="Remaja">Remaja</ion-select-option>
+            <ion-select-option value="Dewasa">Dewasa</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item class="form-item">
+          <ion-label position="floating">Asal Negara</ion-label>
+          <ion-input type="text" [(ngModel)]="formData.asal_negara" name="asal_negara" required></ion-input>
+        </ion-item>
+
+        <ion-item class="form-item">
+          <ion-label position="stacked">Kategori Lomba</ion-label>
+          <ion-select [(ngModel)]="formData.kategori_lomba" name="kategori_lomba" placeholder="Pilih Kategori Lomba" (ionChange)="onKategoriChange()" required>
+            <ion-select-option value="Beregu">Cabang Olahraga Beregu</ion-select-option>
+            <ion-select-option value="Perorangan">Cabang Olahraga Perorangan</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item *ngIf="jenisLombaOptions.length > 0" class="form-item">
+          <ion-label position="stacked">Jenis Cabang Olahraga</ion-label>
+          <ion-select [(ngModel)]="formData.jenis_lomba" name="jenis_lomba" placeholder="Pilih Jenis Cabang" required>
+            <ion-select-option *ngFor="let option of jenisLombaOptions" [value]="option">{{ option }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item class="form-item">
+          <ion-label position="floating">Keterangan Tambahan</ion-label>
+          <ion-textarea [(ngModel)]="formData.keterangan" name="keterangan"></ion-textarea>
+        </ion-item>
+
+        <ion-button expand="block" type="submit" color="success" class="submit-button glow-button">
+          <ion-icon name="send-outline" slot="start"></ion-icon>
+          Kirim Pendaftaran
+        </ion-button>
+
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

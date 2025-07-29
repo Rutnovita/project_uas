@@ -1,0 +1,7 @@
+{
+  "name": "silomba",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

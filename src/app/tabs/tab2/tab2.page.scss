@@ -1,0 +1,177 @@
+/* Animasi dasar */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-in-out;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Background halaman sama seperti beranda */
+ion-content {
+  --background: linear-gradient(135deg, #fdfbfb, #ebedee, #e0f7fa, #d0f0c0);
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Kartu Formulir */
+.form-card {
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(3px);
+  animation: slideUp 0.8s ease-in-out;
+}
+
+/* Judul Formulir */
+ion-card-title,
+.judul-form {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #00695c;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+/* Subjudul Formulir */
+ion-card-subtitle,
+.subjudul-form {
+  font-size: 0.95rem;
+  text-align: center;
+  color: #555;
+  font-style: italic;
+}
+
+/* Item Formulir */
+ion-item {
+  --highlight-height: 2px;
+  --highlight-color-focused: #3880ff;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* Label Formulir */
+ion-label {
+  color: #444;
+}
+
+/* Tombol Submit */
+.submit-button {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Tombol Submit dengan animasi pulse */
+.pulse-button {
+  animation: pulse 1.5s infinite;
+}
+.custom-toolbar {
+  background: linear-gradient(90deg, #5dd39e, #000000, #3c9ee7);
+  color: #000000;
+  text-align: center;
+}
+
+.custom-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.judul-form {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #3c9ee7;
+  text-align: center;
+}
+
+.subjudul-form {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+.form-card {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+}
+
+.form-item {
+  margin-top: 10px;
+}
+
+.submit-button {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.glow-button {
+  box-shadow: 0 0 15px #28c76f;
+  animation: pulse 2s infinite;
+}
+
+.animate-card {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(40, 199, 111, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(40, 199, 111, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(40, 199, 111, 0);
+  }
+}
+
+
